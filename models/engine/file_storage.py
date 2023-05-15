@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """FileStorage class."""
+
 import datetime
 import json
 import os
