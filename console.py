@@ -13,6 +13,7 @@ from models.user import User
 from models.state import State
 
 
+
 def parse(arg):
     curly_braces = re.search(r"\{(.*?)\}", arg)
     brackets = re.search(r"\[(.*?)\]", arg)
