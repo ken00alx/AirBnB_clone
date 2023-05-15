@@ -48,9 +48,10 @@ class HBNBCommand(cmd.Cmd):
         "Amenity",
         "Review"
     }
-
-    def emptyline(self):        """Do nothing upon receiving nothing."""
+    """Do nothing upon receiving nothing."""
+    def emptyline(self):
         pass
+
 
     def default(self, arg):
         """Default property"""
