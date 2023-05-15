@@ -52,9 +52,8 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         pass
 
-
+    """Default property"""
     def default(self, arg):
-        """Default property"""
         argdict = {
             "all": self.do_all,
             "show": self.do_show,
