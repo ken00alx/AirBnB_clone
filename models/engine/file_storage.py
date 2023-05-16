@@ -17,7 +17,7 @@ class FileStorage:
         # TODO: should this be a copy()?
         return FileStorage.__objects
 
-    def new(self, obj):
+    def new(FileStorage, obj):
         """Sets new obj in objects dictionary."""
         # TODO: should these be more precise specifiers?
         key = "{}.{}".format(type(obj).__name__, obj.id)
@@ -25,6 +25,10 @@ class FileStorage:
 
     def save(self):
         """Serialzes objects to JSON file."""
+        data = {}
+        for key, obj in FileStorage.__objects.items():
+            data[key] = obj.to_dict()
+
         with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
             d = {k: v.to_dict() for k, v in FileStorage.__objects.items()}
             json.dump(d, f)
