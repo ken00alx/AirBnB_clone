@@ -13,18 +13,22 @@ class FileStorage:
     __objects = {}
 
     def all(self):
-        """__objects dictionary is Returned."""
+        """objects dictionary is Returned."""
         # TODO: should this be a copy()?
         return FileStorage.__objects
 
-    def new(self, obj):
-        """Sets new obj in __objects dictionary."""
+    def new(FileStorage, obj):
+        """Sets new obj in objects dictionary."""
         # TODO: should these be more precise specifiers?
         key = "{}.{}".format(type(obj).__name__, obj.id)
         FileStorage.__objects[key] = obj
 
     def save(self):
-        """Serialzes __objects to JSON file."""
+        """Serialzes objects to JSON file."""
+        data = {}
+        for key, obj in FileStorage.__objects.items():
+            data[key] = obj.to_dict()
+
         with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
             d = {k: v.to_dict() for k, v in FileStorage.__objects.items()}
             json.dump(d, f)
@@ -49,7 +53,7 @@ class FileStorage:
         return classes
 
     def reload(self):
-        """Deserializes JSON file into __objects."""
+        """Deserializes JSON file into objects."""
         if not os.path.isfile(FileStorage.__file_path):
             return
         with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
