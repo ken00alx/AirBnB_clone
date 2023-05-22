@@ -12,6 +12,7 @@ Unittest classes:
     TestHBNBCommand_update
 """
 import os
+import models
 import sys
 import unittest
 from models import storage

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * === Header style ===
  */
@@ -7,4 +8,10 @@ header {
             background-color: #f00;
             height: 70px;
             width: 100%;
+=======
+header {
+	background-color: #FF0000;
+	height: 70px;
+	width: 100%
+>>>>>>> 351f07a1d6cb2a0765325a2721a9aa5651f54f3b
 }

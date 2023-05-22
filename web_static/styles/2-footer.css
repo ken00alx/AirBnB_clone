@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * === Footer style ===
  */
@@ -14,3 +15,24 @@ footer {
             align-items: center;
             display: flex;
 }
+=======
+footer {
+	background-color: #00FF00;
+	height: 60px;
+	width: 100%;
+	position: fixed;
+	bottomL 0;
+}
+
+footer div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height:100%;
+}
+footer span {
+	color: white;
+	font-weight: bold;
+}
+
+>>>>>>> 351f07a1d6cb2a0765325a2721a9aa5651f54f3b
